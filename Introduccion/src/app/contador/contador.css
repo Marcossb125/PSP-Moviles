@@ -1,0 +1,8 @@
+.num{
+    font-size: 50px;
+}
+.rectangulo {height: 200px; width: 100px; background-color: black; align-items: center; justify-content: center; display: flex; flex-direction: column;}
+.rojo {background-color:red; align-items: center; height: 50px; width: 50px; border-radius: 50px;}
+.amarillo {background-color: yellow; align-items: center; height: 50px; width: 50px; border-radius: 50px;}
+.verde {background-color: green; align-items: center; height: 50px; width: 50px; border-radius: 50px;}
+.apagado {background-color:gray; align-items: center; height: 50px; width: 50px; border-radius: 50px;}

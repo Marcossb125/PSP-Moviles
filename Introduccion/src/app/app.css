@@ -1,0 +1,16 @@
+.contenedor{
+    flex-direction:column; 
+    display: flex; 
+    width: 2000px; 
+    height: 700px; 
+    align-items: center; 
+    justify-content: center;
+
+}
+.contenedor-contador{
+    flex-direction:column; 
+    display: flex; 
+    width: 2000px;  
+    align-items: center; 
+    justify-content: center;
+}

@@ -1,0 +1,19 @@
+.agujero{border: solid 2px black; align-items: center; height: 50px; width: 50px; border-radius: 50px;}
+.apagado{background-color: black;}
+.encendido{background-color: brown; align-items: center; height: 50px; width: 50px; border-radius: 50px; border: solid 2px black;}
+.contenedor-contador{
+    flex-direction:column; 
+    display: flex; 
+    width: 2000px;  
+    align-items: center; 
+    justify-content: center;
+}
+.contenedor{
+    flex-direction:column; 
+    display: flex; 
+    width: 2000px; 
+    height: 700px; 
+    align-items: center; 
+    justify-content: center;
+
+}

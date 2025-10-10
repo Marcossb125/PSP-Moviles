@@ -1,0 +1,18 @@
+<div class=".contenedor-contador">
+</div>
+
+<button (click)="aparicion()" ngif="topo1 == 1; else apagado" class="encendido"></button>
+
+
+<button (click)="aparicion()" ngif="topo2 == 1; else apagado" class="encendido"></button>
+
+
+<button (click)="aparicion()" ngif="topo3 == 1; else apagado" class="encendido"></button>
+
+
+<button (click)="aparicion()" ngif="topo4 == 1; else apagado" class="encendido"></button>
+
+
+<ng-template #apagado>
+    <button class ="apagado"></button>
+</ng-template>
