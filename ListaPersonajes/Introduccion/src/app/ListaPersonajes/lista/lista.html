@@ -1,0 +1,5 @@
+<div class="tarjetas">
+    @for (personaje of personajes; track personaje) {
+        <app-tarjeta [nombre] = "personaje.nombre" [poder] = "personaje.poder" [imagen] = "personaje.imagen" [raza] = "personaje.raza" [historia] = "personaje.historia"></app-tarjeta>
+            }
+</div>

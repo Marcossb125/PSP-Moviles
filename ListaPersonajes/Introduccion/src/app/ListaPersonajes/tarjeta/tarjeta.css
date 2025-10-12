@@ -1,0 +1,62 @@
+.tarjeta1 {
+  background-color: blue; 
+  color: red; 
+  width: 500px; 
+  height: 225px; 
+  flex-direction:column; 
+  display: flex; 
+  border-radius: 15px; 
+  border: solid 2px black; 
+  justify-content: space-between; 
+  padding: 10px;
+}
+
+.tarjeta2 {
+  background-color: red; 
+  color: blue; 
+  width: 500px; 
+  height: 225px; 
+  flex-direction:column; 
+  display: flex; 
+  border-radius: 15px; 
+  border: solid 2px black; 
+  justify-content: space-between; 
+  padding: 10px;
+}
+
+.tarjeta3 {
+  background:linear-gradient(to right, red 0%, hwb(350 26% 17%) 25%, rgb(136, 0, 248) 50%, rgb(38, 0, 255) 75%, rgb(0, 162, 255) 100%); 
+  color: black; 
+  width: 500px; 
+  height: 225px; 
+  flex-direction:column; 
+  display: flex; 
+  border-radius: 15px; 
+  border: solid 2px black; 
+  justify-content: space-between; 
+  padding: 10px;}
+
+.nombre {
+  text-align: center;
+  font-weight: bold;
+  font-family:'Trebuchet MS';
+  font-size: 30px;
+}
+.contenido {
+  text-align: right;
+  font-style: italic;
+  font-weight:400
+
+
+}
+.poder {
+ text-align: right;
+}
+.imagen{ 
+    width: 100px;
+    height: 100px;
+}
+.historia{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size:10.5px;
+}

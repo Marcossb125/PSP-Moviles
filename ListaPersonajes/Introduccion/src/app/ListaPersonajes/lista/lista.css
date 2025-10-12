@@ -1,0 +1,10 @@
+.tarjetas{
+    width: 50%;
+    height: 50%;
+    row-gap: 70px;
+    column-gap: 50px;
+    display: grid;
+    grid-template-columns: repeat(3,500px);
+    grid-template-rows:repeat(2, 200px);
+}
+
