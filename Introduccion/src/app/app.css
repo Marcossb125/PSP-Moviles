@@ -1,16 +1,38 @@
 .contenedor{
-    flex-direction:column; 
-    display: flex; 
-    width: 2000px; 
-    height: 700px; 
-    align-items: center; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo{
+    width: 100%;
+    height: 80%;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 
+    
 }
-.contenedor-contador{
-    flex-direction:column; 
-    display: flex; 
-    width: 2000px;  
-    align-items: center; 
+.example-spacer {
+  flex: 1 1 auto;
+}
+.opcion{
+    cursor: pointer;
+}
+.opcion:hover{
+        font-weight: 700;
+}
+
+.contendedor-root{
+    width: 100%;
+    height: 80vh;
+    background-color: antiquewhite;
+    border: solid 2px black;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }

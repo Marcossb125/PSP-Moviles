@@ -1,0 +1,11 @@
+.error{
+    color: #b30000;
+    size: small;
+}
+.contenedor-campo{
+    display: flex;
+    flex-direction: column;
+}
+.sangre{
+    background-color: #b30000;
+}

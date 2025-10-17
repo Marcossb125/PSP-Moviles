@@ -1,1 +1,57 @@
-<div>{{ personaje.nombre }}</div>
+<div *ngIf="raza == 'Demonio'" class="tarjeta1">
+    <mat-tab-group>
+        <mat-tab label="Basic info">
+            <div class="poder">
+                <i *ngIf="poder == 1"class="material-icons">star_purple500</i>
+                <i *ngIf="poder == 2"class="material-icons">star_purple500 star_purple500</i>
+                <i *ngIf="poder == 3"class="material-icons">star_purple500 star_purple500 star_purple500</i>
+                <i *ngIf="poder == 4"class="material-icons">star_purple500 star_purple500 star_purple500 star_purple500</i>
+                <i *ngIf="poder == 5"class="material-icons">star_purple500 star_purple500 star_purple500 star_purple500 star_purple500</i>
+            </div>
+            <div class="nombre">{{ nombre }}</div>
+            <img class="imagen" src="{{ imagen }}" alt="{{ nombre }}">
+            <div class="contenido"> {{ raza }}</div>
+        </mat-tab>
+        <mat-tab label="History" class="historia">{{ historia }}</mat-tab>
+    </mat-tab-group>
+        
+</div>
+
+<div *ngIf="raza == 'Mestizo'" class="tarjeta3">
+    <mat-tab-group>
+        <mat-tab label="Basic info">
+            <div class="poder">
+                <i *ngIf="poder == 1"class="material-icons">star_purple500</i>
+                <i *ngIf="poder == 2"class="material-icons">star_purple500 star_purple500</i>
+                <i *ngIf="poder == 3"class="material-icons">star_purple500 star_purple500 star_purple500</i>
+                <i *ngIf="poder == 4"class="material-icons">star_purple500 star_purple500 star_purple500 star_purple500</i>
+                <i *ngIf="poder == 5"class="material-icons">star_purple500 star_purple500 star_purple500 star_purple500 star_purple500</i>
+            </div>
+            <div class="nombre">{{ nombre }}</div>
+            <img class="imagen" src="{{ imagen }}" alt="{{ nombre }}">
+            <div class="contenido"> {{ raza }}</div>
+        </mat-tab>
+            <mat-tab label="History">
+                <p class="historia">{{ historia }}</p>
+            </mat-tab>
+    </mat-tab-group>
+        
+</div>
+<div *ngIf="raza == 'Humano'" class="tarjeta2">
+    <mat-tab-group>
+        <mat-tab label="Basic info">
+            <div class="poder">
+                <i *ngIf="poder == 1"class="material-icons">star_purple500</i>
+                <i *ngIf="poder == 2"class="material-icons">star_purple500 star_purple500</i>
+                <i *ngIf="poder == 3"class="material-icons">star_purple500 star_purple500 star_purple500</i>
+                <i *ngIf="poder == 4"class="material-icons">star_purple500 star_purple500 star_purple500 star_purple500</i>
+                <i *ngIf="poder == 5"class="material-icons">star_purple500 star_purple500 star_purple500 star_purple500 star_purple500</i>
+            </div>
+            <div class="nombre">{{ nombre }}</div>
+            <img class="imagen" src="{{ imagen }}" alt="{{ nombre }}">
+            <div class="contenido"> {{ raza }}</div>
+        </mat-tab>
+            <mat-tab label="History" class="historia">{{ historia }}</mat-tab>
+    </mat-tab-group>
+        
+</div>

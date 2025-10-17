@@ -1,1 +1,16 @@
+<mat-toolbar color="primary" [ngClass]="{ 'halloween': halloween }">
+  <span class="example-spacer"></span>
+  <span class="opcion" routerLink="/contador">Contador</span>
+  <span class="example-spacer"></span>
+  <span  class="opcion" routerLink="/matatopos">Matatopos</span>
+  <span class="example-spacer"></span>
+  <span class="opcion" routerLink="/lista">ListaPersonajes</span>
+  <span class="example-spacer"></span>    
+  <span class="opcion" routerLink="/formulario-registro">Formulario</span>
+  <span class="example-spacer"></span>
+  <span class="opcion" routerLink="/halloween">formularioHalloween</span>
+  <span class="example-spacer"></span>
+  <span class="opcion">	<mat-icon>bookmark</mat-icon></span>
 
+  <span class="opcion">	<mat-slide-toggle [(ngModel)]="halloween"></mat-slide-toggle></span>
+</mat-toolbar>
