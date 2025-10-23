@@ -1,0 +1,76 @@
+@if (formulario1 == false) {
+    <div class="contenedor-añadir">
+    <button class="añadir" (click)="cambio()">Añadir</button>
+    </div>
+<div cdkDropListGroup>
+    <div class="contenedor-listas">
+
+
+        <div cdkDropList [cdkDropListData]="toDo" class="contenedor-lista" (cdkDropListDropped)="drop($event)">
+            <div>
+            <h3 class="derecha">{{ toDo.length }} Tareas</h3>
+            <h2>To do</h2>
+            </div>
+            @for (item of toDo; track item) {
+            <div class="contenedor-tarea" cdkDrag>
+                <p>{{item.nombre}}</p>
+                <button class="eliminar" (click)="eliminar(toDo, item) ">eliminar</button>
+            </div>
+            }
+        </div>
+
+
+
+
+        <div cdkDropList [cdkDropListData]="doing" class="contenedor-lista" (cdkDropListDropped)="drop($event)">
+            <div>
+            <h3 class="derecha">{{ doing.length }} Tareas</h3>
+            <h2>Doing</h2>
+            </div>
+            @for (item of doing; track item) {
+            <div class="contenedor-tarea" cdkDrag>
+                <p>{{item.nombre}}</p>
+                <div class="eliminar2">
+                <button class="eliminar" (click)="eliminar(doing, item) ">eliminar</button>
+                </div>
+            </div>
+            }
+        </div>
+        <div cdkDropList [cdkDropListData]="done" class="contenedor-lista" (cdkDropListDropped)="drop($event)">
+            <div>
+            <h3 class="derecha">{{ done.length }} Tareas</h3>
+            <h2>Done</h2>
+            </div>
+            @for (item of done; track item) {
+            <div class="contenedor-tarea" cdkDrag>
+                <p>{{item.nombre}}</p>
+                <button class="eliminar" (click)="eliminar(done, item) ">eliminar</button>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+} @else {
+<form [formGroup]="formulario" (ngSubmit)="mostrar()">
+    <div class="contenedor-campo">
+        <label for="nombre">Nombre de la tarea:</label>
+        <input id="nombre" formControlName="nombre">
+        @if(formulario.controls['nombre'].touched){
+        <div class="mensaje-error">
+            @if(formulario.controls['nombre'].hasError('required')) { <p>El campo nombre es obligatorio</p> }
+        </div>
+        }
+    </div>
+    <div class="contenedor-campo">
+        <label for="descripcion">Descripcion de la tarea:</label>
+        <input id="descripcion" formControlName="descripcion">
+        @if(formulario.controls['email'].touched){
+        <div class="mensaje-error">
+            @if(formulario.controls['descripcion'].hasError('required')) { El campo descripcion es obligatorio }
+        </div>
+        }
+    </div>
+
+    <button (click)= "cambio()">Enviar</button>
+</form>
+}

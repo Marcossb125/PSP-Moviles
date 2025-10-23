@@ -6,3 +6,7 @@
 .amarillo {background-color: yellow; align-items: center; height: 50px; width: 50px; border-radius: 50px;}
 .verde {background-color: green; align-items: center; height: 50px; width: 50px; border-radius: 50px;}
 .apagado {background-color:gray; align-items: center; height: 50px; width: 50px; border-radius: 50px;}
+
+.esHalloween{
+    background-color: blueviolet;
+}

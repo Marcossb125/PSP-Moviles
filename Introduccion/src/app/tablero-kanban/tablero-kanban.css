@@ -1,0 +1,53 @@
+.contenedor-listas {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+}
+.contenedor-lista {
+    height: 500px;
+    width: 350px;
+    border: black 3px solid;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    gap: 10px;
+}
+.contenedor-tarea{
+    height: 35px;
+    width: 350px;
+    border: black 2px solid;
+    display: flex;
+    row-gap: 30px;
+    background-color: aquamarine;
+    box-shadow: 0 0 20px aqua;
+}
+.eliminar{
+    font-size: 10px;
+    color: #b30000;
+    align-self: self-end;
+}
+.mensaje-error{
+    color: red;
+    size: small;
+}
+.contenedor-campo{
+    display: flex;
+    flex-direction: column;
+}
+.derecha {
+    text-align: right;
+}
+.contenedor-añadir {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.añadir{
+    background-color: aliceblue;
+    border: black 2px solid;
+    border-radius: 15px;
+    width: 1150px;
+    height: 25px;
+}

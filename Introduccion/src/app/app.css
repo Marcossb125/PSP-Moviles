@@ -36,3 +36,13 @@
     justify-content: center;
     align-items: center;
 }
+.contendedor-root-halloween{
+    width: 100%;
+    height: 91vh;
+    background-color: blueviolet;
+    border: solid 2px orangered;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

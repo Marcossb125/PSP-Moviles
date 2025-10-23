@@ -1,5 +1,16 @@
 <mat-toolbar color="primary" [ngClass]="{ 'halloween': halloween }">
   <span class="example-spacer"></span>
+<span class="opcion opcion1" matButton [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></span>
+    <mat-menu class #menu="matMenu">
+      <button mat-menu-item routerLink="/contador">Contador</button>
+      <button mat-menu-item routerLink="/matatopos">Matatopos</button>
+      <button mat-menu-item routerLink="/carrera">Carrera</button>
+      <button mat-menu-item routerLink="/lista">ListaPersonajes</button>
+      <button mat-menu-item routerLink="/formulario-registro">Formulario</button>
+      <button mat-menu-item routerLink="/halloween">formularioHalloween</button>
+      <button mat-menu-item routerLink="/kanban">kanban</button>
+    </mat-menu>
+  <span class="example-spacer"></span>
   <span class="opcion" routerLink="/contador">Contador</span>
   <span class="example-spacer"></span>
   <span class="opcion" routerLink="/matatopos">Matatopos</span>
@@ -10,7 +21,7 @@
   <span class="example-spacer"></span>
   <span class="opcion" routerLink="/halloween">formularioHalloween</span>
   <span class="example-spacer"></span>
-  <span class="opcion"> <mat-icon>bookmark</mat-icon></span>
+  <span class="opcion"> <mat-icon>bolt</mat-icon></span>
 
   <span class="opcion"> <mat-slide-toggle [(ngModel)]="halloween"></mat-slide-toggle></span>
 </mat-toolbar>
