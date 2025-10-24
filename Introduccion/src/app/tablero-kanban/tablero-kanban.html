@@ -1,20 +1,24 @@
 @if (formulario1 == false) {
-    <div class="contenedor-añadir">
+<div class="contenedor-global">
+<div class="contenedor-añadir">
     <button class="añadir" (click)="cambio()">Añadir</button>
-    </div>
+</div>
+<div class="gap"></div>
 <div cdkDropListGroup>
     <div class="contenedor-listas">
 
 
         <div cdkDropList [cdkDropListData]="toDo" class="contenedor-lista" (cdkDropListDropped)="drop($event)">
             <div>
-            <h3 class="derecha">{{ toDo.length }} Tareas</h3>
-            <h2>To do</h2>
+                <h3 class="derecha">{{ toDo.length }} Tareas</h3>
+                <h2 class="titulo-lista">To do</h2>
             </div>
             @for (item of toDo; track item) {
             <div class="contenedor-tarea" cdkDrag>
                 <p>{{item.nombre}}</p>
-                <button class="eliminar" (click)="eliminar(toDo, item) ">eliminar</button>
+                <div class="contenedor-eliminar">
+                    <button class="eliminar" (click)="eliminar(toDo, item) ">eliminar</button>
+                </div>
             </div>
             }
         </div>
@@ -24,31 +28,34 @@
 
         <div cdkDropList [cdkDropListData]="doing" class="contenedor-lista" (cdkDropListDropped)="drop($event)">
             <div>
-            <h3 class="derecha">{{ doing.length }} Tareas</h3>
-            <h2>Doing</h2>
+                <h3 class="derecha">{{ doing.length }} Tareas</h3>
+                <h2 class="titulo-lista">Doing</h2>
             </div>
             @for (item of doing; track item) {
             <div class="contenedor-tarea" cdkDrag>
                 <p>{{item.nombre}}</p>
-                <div class="eliminar2">
-                <button class="eliminar" (click)="eliminar(doing, item) ">eliminar</button>
+                <div class="contenedor-eliminar">
+                    <button class="eliminar" (click)="eliminar(doing, item) ">eliminar</button>
                 </div>
             </div>
             }
         </div>
         <div cdkDropList [cdkDropListData]="done" class="contenedor-lista" (cdkDropListDropped)="drop($event)">
             <div>
-            <h3 class="derecha">{{ done.length }} Tareas</h3>
-            <h2>Done</h2>
+                <h3 class="derecha">{{ done.length }} Tareas</h3>
+                <h2 class="titulo-lista">Done</h2>
             </div>
             @for (item of done; track item) {
             <div class="contenedor-tarea" cdkDrag>
                 <p>{{item.nombre}}</p>
-                <button class="eliminar" (click)="eliminar(done, item) ">eliminar</button>
+                <div class="contenedor-eliminar">
+                    <button class="eliminar" (click)="eliminar(done, item) ">eliminar</button>
+                </div>
             </div>
             }
         </div>
     </div>
+</div>
 </div>
 } @else {
 <form [formGroup]="formulario" (ngSubmit)="mostrar()">
@@ -71,6 +78,6 @@
         }
     </div>
 
-    <button (click)= "cambio()">Enviar</button>
+    <button (click)="cambio()">Enviar</button>
 </form>
 }

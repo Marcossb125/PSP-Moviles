@@ -4,7 +4,7 @@
     gap: 35px;
 }
 .contenedor-lista {
-    height: 500px;
+    height: 700px;
     width: 350px;
     border: black 3px solid;
     border-radius: 15px;
@@ -50,4 +50,18 @@
     border-radius: 15px;
     width: 1150px;
     height: 25px;
+}
+.contenedor-eliminar{
+    width: 100%;
+    align-items: right;
+    display: flex;
+    flex-direction: column;
+    align-self: self-end;
+}
+.gap{
+    height: 30px;
+}
+.titulo-lista{
+    width: 100%;
+    text-align: center;
 }

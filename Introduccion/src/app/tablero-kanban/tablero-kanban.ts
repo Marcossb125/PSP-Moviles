@@ -19,21 +19,9 @@ export class TableroKanban {
   formulario: FormGroup;
 
 
-  toDo:Tarea[] = [
-    {id: crypto.randomUUID(), nombre: "Limpiar", descripcion: "Limpiar mucho"},
-    {id: crypto.randomUUID(), nombre: "Limpiar", descripcion: "Limpiar mucho"},
-    {id: crypto.randomUUID(), nombre: "Limpiar", descripcion: "Limpiar mucho"},
-    {id: crypto.randomUUID(), nombre: "Limpiar", descripcion: "Limpiar mucho"},
-  ]
-  doing:Tarea[] = [
-    {id: crypto.randomUUID(), nombre: "Recoger", descripcion: "Recoger mucho"},
-    {id: crypto.randomUUID(), nombre: "Recoger", descripcion: "Recoger mucho"},
-    {id: crypto.randomUUID(), nombre: "Recoger", descripcion: "Recoger mucho"},
-    {id: crypto.randomUUID(), nombre: "Recoger", descripcion: "Recoger mucho"},
-  ]
-  done:Tarea[] = [
-    {id: crypto.randomUUID(), nombre: "Recoger", descripcion: "Recoger mucho"},
-  ]
+  toDo:Tarea[] = []
+  doing:Tarea[] = []
+  done:Tarea[] = []
 
   constructor(private fb: FormBuilder) {
     
