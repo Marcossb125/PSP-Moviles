@@ -1,64 +1,80 @@
 @if (formulario1 == false) {
 <div class="contenedor-global">
-<div class="contenedor-añadir">
-    <button class="añadir" (click)="cambio()">Añadir</button>
-</div>
-<div class="gap"></div>
-<div cdkDropListGroup>
-    <div class="contenedor-listas">
+    <div class="contenedor-añadir">
+        <button class="añadir" (click)="anadir()">Añadir</button>
+    </div>
+    <div class="gap"></div>
+    <div cdkDropListGroup>
+        <div class="contenedor-listas">
 
 
-        <div cdkDropList [cdkDropListData]="toDo" class="contenedor-lista" (cdkDropListDropped)="drop($event)">
-            <div>
-                <h3 class="derecha">{{ toDo.length }} Tareas</h3>
-                <h2 class="titulo-lista">To do</h2>
-            </div>
-            @for (item of toDo; track item) {
-            <div class="contenedor-tarea" cdkDrag>
-                <p>{{item.nombre}}</p>
-                <div class="contenedor-eliminar">
-                    <button class="eliminar" (click)="eliminar(toDo, item) ">eliminar</button>
+            <div cdkDropList [cdkDropListData]="toDo" class="contenedor-lista" (cdkDropListDropped)="drop($event)">
+                <div>
+                    <h3 class="derecha">{{ toDo.length }} Tareas</h3>
+                    <h2 class="titulo-lista">To do</h2>
                 </div>
+                @for (item of toDo; track item) {
+                    <mat-accordion>
+                        <mat-expansion-panel class="tarea" hideToggle cdkDrag>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title> {{ item.nombre }} </mat-panel-title>
+                                <div class="contenedor-eliminar">
+                                    <button class="eliminar" (click)="eliminar(toDo, item) ">eliminar</button>
+                                </div>
+                            </mat-expansion-panel-header>
+                            <p>{{ item.descripcion }}</p>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                }
             </div>
-            }
-        </div>
 
 
 
 
-        <div cdkDropList [cdkDropListData]="doing" class="contenedor-lista" (cdkDropListDropped)="drop($event)">
-            <div>
-                <h3 class="derecha">{{ doing.length }} Tareas</h3>
-                <h2 class="titulo-lista">Doing</h2>
-            </div>
-            @for (item of doing; track item) {
-            <div class="contenedor-tarea" cdkDrag>
-                <p>{{item.nombre}}</p>
-                <div class="contenedor-eliminar">
-                    <button class="eliminar" (click)="eliminar(doing, item) ">eliminar</button>
+            <div cdkDropList [cdkDropListData]="doing" class="contenedor-lista" (cdkDropListDropped)="drop($event)">
+                <div>
+                    <h3 class="derecha">{{ doing.length }} Tareas</h3>
+                    <h2 class="titulo-lista">Doing</h2>
                 </div>
+                @for (item of doing; track item) {
+                <mat-accordion>
+                        <mat-expansion-panel class="tarea" hideToggle cdkDrag>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title> {{ item.nombre }} </mat-panel-title>
+                                <div class="contenedor-eliminar">
+                                    <button class="eliminar" (click)="eliminar(doing, item) ">eliminar</button>
+                                </div>
+                            </mat-expansion-panel-header>
+                            <p>{{ item.descripcion }}</p>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                }
             </div>
-            }
-        </div>
-        <div cdkDropList [cdkDropListData]="done" class="contenedor-lista" (cdkDropListDropped)="drop($event)">
-            <div>
-                <h3 class="derecha">{{ done.length }} Tareas</h3>
-                <h2 class="titulo-lista">Done</h2>
-            </div>
-            @for (item of done; track item) {
-            <div class="contenedor-tarea" cdkDrag>
-                <p>{{item.nombre}}</p>
-                <div class="contenedor-eliminar">
-                    <button class="eliminar" (click)="eliminar(done, item) ">eliminar</button>
+            <div cdkDropList [cdkDropListData]="done" class="contenedor-lista" (cdkDropListDropped)="drop($event)">
+                <div>
+                    <h3 class="derecha">{{ done.length }} Tareas</h3>
+                    <h2 class="titulo-lista">Done</h2>
                 </div>
+                @for (item of done; track item) {
+                <mat-accordion>
+                        <mat-expansion-panel class="tarea" hideToggle cdkDrag>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title> {{ item.nombre }} </mat-panel-title>
+                                <div class="contenedor-eliminar">
+                                    <button class="eliminar" (click)="eliminar(done, item) ">eliminar</button>
+                                </div>
+                            </mat-expansion-panel-header>
+                            <p>{{ item.descripcion }}</p>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                }
             </div>
-            }
         </div>
     </div>
 </div>
-</div>
 } @else {
 <form [formGroup]="formulario" (ngSubmit)="mostrar()">
+    <div class="contenedor-formulario">
     <div class="contenedor-campo">
         <label for="nombre">Nombre de la tarea:</label>
         <input id="nombre" formControlName="nombre">
@@ -76,8 +92,12 @@
             @if(formulario.controls['descripcion'].hasError('required')) { El campo descripcion es obligatorio }
         </div>
         }
+        </div>
+        
+        <button class="enviar" (click)="anadir()">Enviar</button>
+        
     </div>
 
-    <button (click)="cambio()">Enviar</button>
+    
 </form>
 }

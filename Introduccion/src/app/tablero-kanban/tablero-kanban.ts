@@ -1,34 +1,41 @@
 import { Component } from '@angular/core';
 import { Tarea } from '../models/tarea';
-
-
-import { CdkDragDrop, CdkDrag, CdkDropList, CdkDropListGroup, moveItemInArray, transferArrayItem, DragDropModule } 
-from '@angular/cdk/drag-drop';
-import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule, Validators} from '@angular/forms';
+import { CdkDragDrop, CdkDrag, CdkDropList, CdkDropListGroup, moveItemInArray, transferArrayItem, DragDropModule }
+  from '@angular/cdk/drag-drop';
+import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-tablero-kanban',
-  imports: [DragDropModule, CdkDrag, CdkDropList, CdkDropListGroup, ReactiveFormsModule],
+  imports: [DragDropModule, CdkDrag, CdkDropList, CdkDropListGroup, ReactiveFormsModule, MatExpansionModule],
   templateUrl: './tablero-kanban.html',
   styleUrl: './tablero-kanban.css'
 })
 export class TableroKanban {
-  k:number = 0;
-  formulario1:boolean = false;
+  k: number = 0;
+  formulario1: boolean = false;
 
   formulario: FormGroup;
 
 
-  toDo:Tarea[] = []
-  doing:Tarea[] = []
-  done:Tarea[] = []
+  toDo: Tarea[] = []
+  doing: Tarea[] = []
+  done: Tarea[] = []
 
   constructor(private fb: FormBuilder) {
-    
+
     this.formulario = this.fb.group({
       nombre: ['', [Validators.required]],
-      deescripcion: ['', [Validators.required]],
+      descripcion: ['', [Validators.required]],
     });
+
+    const datos = localStorage.getItem('listas de tareas kanban');
+  if (datos) {
+    const { toDo, doing, done } = JSON.parse(datos);
+    this.toDo = toDo || [];
+    this.doing = doing || [];
+    this.done = done || [];
+  }
   }
 
   drop(event: CdkDragDrop<Tarea[]>) {
@@ -42,41 +49,46 @@ export class TableroKanban {
         event.currentIndex,
       );
     }
+    this.localStorage();
   }
-  eliminar(lista:Tarea[], tarea:Tarea) {
+  eliminar(lista: Tarea[], tarea: Tarea) {
 
     for (this.k = 0; this.k < lista.length; this.k++) {
       if (lista[this.k].id == tarea.id) {
-        lista.splice(this.k,1)
+        lista.splice(this.k, 1)
       }
     }
+    this.localStorage();
   }
 
-  añadir(lista:Tarea[], nombre:string, descripcion:string) {
-    lista.push({
-      id: crypto.randomUUID(),
-      nombre: nombre,
-      descripcion: descripcion
-    } )
-  }
-
-  mostrar(){
+  mostrar() {
     if (this.formulario.invalid) {
       console.log("el formulario contiene errores");
     } else {
-    console.log(this.formulario.value);
+      console.log(this.formulario.value);
     }
   }
-  cambio() {
+  anadir() {
     if (this.formulario1 == false) {
       this.formulario1 = true
     } else {
-      this.formulario1 = false;
-      this.añadir(this.toDo, this.formulario.get('nombre')?.value, this.formulario.get('descripcion')?.value)
-      this.formulario.reset({
-      nombre: '',
-      descripcion: ''
-    });
+      if (this.formulario.valid) {
+        this.formulario1 = false;
+        this.toDo.push({ id: crypto.randomUUID(), nombre: this.formulario.get('nombre')?.value, descripcion: this.formulario.get('descripcion')?.value })
+        this.formulario.reset({
+          nombre: '',
+          descripcion: ''
+        });
+        this.localStorage();
+      }
     }
+  }
+  localStorage() {
+     const datos = {
+      toDo: this.toDo,
+      doing: this.doing,
+      done: this.done
+    }
+    localStorage.setItem('listas de tareas kanban', JSON.stringify(datos));
   }
 }

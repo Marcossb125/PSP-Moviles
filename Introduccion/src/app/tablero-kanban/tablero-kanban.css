@@ -3,65 +3,82 @@
     flex-direction: row;
     gap: 35px;
 }
+
 .contenedor-lista {
     height: 700px;
     width: 350px;
-    border: black 3px solid;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    background-color: aliceblue;
     gap: 10px;
 }
-.contenedor-tarea{
-    height: 35px;
-    width: 350px;
-    border: black 2px solid;
-    display: flex;
+
+.tarea {
     row-gap: 30px;
     background-color: aquamarine;
     box-shadow: 0 0 20px aqua;
 }
-.eliminar{
+
+.eliminar {
     font-size: 10px;
-    color: #b30000;
+    background-color: red;
     align-self: self-end;
 }
-.mensaje-error{
+
+.mensaje-error {
     color: red;
     size: small;
 }
-.contenedor-campo{
+
+.contenedor-campo {
     display: flex;
     flex-direction: column;
 }
+
 .derecha {
     text-align: right;
 }
+
 .contenedor-añadir {
     width: 100%;
     align-items: center;
     display: flex;
     flex-direction: column;
 }
-.añadir{
+
+.añadir {
     background-color: aliceblue;
     border: black 2px solid;
     border-radius: 15px;
     width: 1150px;
     height: 25px;
 }
-.contenedor-eliminar{
-    width: 100%;
-    align-items: right;
-    display: flex;
-    flex-direction: column;
-    align-self: self-end;
+
+.contenedor-eliminar {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
 }
-.gap{
+
+.gap {
     height: 30px;
 }
-.titulo-lista{
+
+.titulo-lista {
     width: 100%;
     text-align: center;
+}
+.contenedor-formulario {
+    width: 200px;
+    height: 135px;
+    gap: 15px;
+    background-color: aliceblue;
+    border: 3px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.enviar {
+    font-size: 10px;
+    align-self: center;
 }
