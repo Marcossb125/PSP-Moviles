@@ -10,7 +10,7 @@ describe('TableroKanban', () => {
     await TestBed.configureTestingModule({
       imports: [TableroKanban]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(TableroKanban);
     component = fixture.componentInstance;

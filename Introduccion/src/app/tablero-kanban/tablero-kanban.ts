@@ -30,12 +30,12 @@ export class TableroKanban {
     });
 
     const datos = localStorage.getItem('listas de tareas kanban');
-  if (datos) {
-    const { toDo, doing, done } = JSON.parse(datos);
-    this.toDo = toDo || [];
-    this.doing = doing || [];
-    this.done = done || [];
-  }
+    if (datos) {
+      const { toDo, doing, done } = JSON.parse(datos);
+      this.toDo = toDo || [];
+      this.doing = doing || [];
+      this.done = done || [];
+    }
   }
 
   drop(event: CdkDragDrop<Tarea[]>) {
@@ -84,7 +84,7 @@ export class TableroKanban {
     }
   }
   localStorage() {
-     const datos = {
+    const datos = {
       toDo: this.toDo,
       doing: this.doing,
       done: this.done

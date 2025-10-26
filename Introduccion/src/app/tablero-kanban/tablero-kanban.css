@@ -68,6 +68,7 @@
     width: 100%;
     text-align: center;
 }
+
 .contenedor-formulario {
     width: 200px;
     height: 135px;
@@ -78,6 +79,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .enviar {
     font-size: 10px;
     align-self: center;
