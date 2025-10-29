@@ -1,18 +1,16 @@
-<div class=".contenedor-contador">
+<div class =contenedor-puntuacion>
+    <p class="puntuacion">{{ numero }}</p>
 </div>
 
-<button (click)="aparicion()" ngif="topo1 == 1; else apagado" class="encendido"></button>
+<div class="tablero">
+    @for (topo of topos; track $index) {
+    <div class="casilla">
+        <button *ngIf="topo == 1; else nada" class="agujero topo" (click)="incrementar($index)"></button>
+    </div>
+    }
 
+</div>
 
-<button (click)="aparicion()" ngif="topo2 == 1; else apagado" class="encendido"></button>
-
-
-<button (click)="aparicion()" ngif="topo3 == 1; else apagado" class="encendido"></button>
-
-
-<button (click)="aparicion()" ngif="topo4 == 1; else apagado" class="encendido"></button>
-
-
-<ng-template #apagado>
-    <button class ="apagado"></button>
+<ng-template #nada>
+    <div class="agujero vacio"></div>
 </ng-template>

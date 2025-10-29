@@ -1,20 +1,21 @@
 <div class="rectangulo">
-        <div ngif="numero >= 3; else apagado"  class="rojo"></div>
-        <ng-template #apagado>
-            <div class="apagado"></div>
-        </ng-template>
+    <div *ngIf="numero == 0; else apagado" class="rojo"></div>
 
-        <div ngif="numero >= 1; else apagado"  class="amarillo"></div>
-        <ng-template #apagado>
-            <div class="apagado"></div>
-        </ng-template>
+    <div *ngIf="numero >= 1 && numero < 3; else apagado" class="amarillo">
+        <div class="amarillo"></div>
+    </div>
 
-        <div ngif="numero == 0; else apagado" class="verde"></div>
-        <ng-template #apagado>
-            <div class="apagado"></div>
-        </ng-template>
-    </div> 
+    <div *ngIf="numero >= 3; else apagado">
+        <div class="verde"></div>
+    </div>
+
+    </div>
+
 
 <p class="num">{{ numero }}</p>
 <button (click)="incrementar()">+1</button>
 <button (click)="decrementar()">-1</button>
+
+<ng-template #apagado>
+        <div class="apagado"></div>
+    </ng-template>

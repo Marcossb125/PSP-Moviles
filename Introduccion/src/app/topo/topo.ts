@@ -8,21 +8,23 @@ import { CommonModule } from '@angular/common';
   styleUrl: './topo.css'
 })
 export class Topo {
-  numero:number = 0;
-  topo1:number = 0;
-  topo2:number = 0;
-  topo3:number = 0;
-  topo4:number = 0;
+  nuevotopo:number | undefined;
+  numero: number = 0;
+  topos: number[] = [0, 0, 0, 0, 1, 0, 0, 0, 0]
 
-  aparicion() {
-    this.topo1 = Math.random();
-    this.topo2 = Math.random();
-    this.topo3 = Math.random();
-    this.topo4 = Math.random();
-  }
-  incrementar(){
-    this.numero++;
+  aparicion(topo:number) {
+    this.topos = [0,0,0,0,0,0,0,0,0]
+    this.nuevotopo = Math.round(Math.random() * 8);
+    while (this.nuevotopo == topo) {
+      this.nuevotopo = Math.round(Math.random() * 8);
     }
+    this.topos[this.nuevotopo] = 1;
+
   }
+  incrementar(topo:number) {
+    this.numero++;
+    this.aparicion(topo);
+  }
+}
 
 
