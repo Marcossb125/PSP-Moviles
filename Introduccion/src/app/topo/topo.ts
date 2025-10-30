@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Consola } from '../services/consola';
 
 @Component({
   selector: 'app-topo',
@@ -12,6 +13,10 @@ export class Topo {
   numero: number = 0;
   topos: number[] = [0, 0, 0, 0, 1, 0, 0, 0, 0]
 
+  constructor(private c: Consola) {
+  
+  }
+
   aparicion(topo:number) {
     this.topos = [0,0,0,0,0,0,0,0,0]
     this.nuevotopo = Math.round(Math.random() * 8);
@@ -23,6 +28,13 @@ export class Topo {
   }
   incrementar(topo:number) {
     this.numero++;
+    this.c.matarTopo();
+    this.c.mostrarEnConsola("Has matado " + this.c.toposMatados + " topos");
+    this.aparicion(topo);
+  }
+
+  fallo(topo:number) {
+    this.numero--;
     this.aparicion(topo);
   }
 }

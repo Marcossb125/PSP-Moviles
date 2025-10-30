@@ -26,7 +26,7 @@
 
 .tarjeta3 {
   background:linear-gradient(to right, red 0%, hwb(350 26% 17%) 25%, rgb(136, 0, 248) 50%, rgb(38, 0, 255) 75%, rgb(0, 162, 255) 100%); 
-  color: black; 
+  color: white; 
   width: 500px; 
   height: 225px; 
   flex-direction:column; 
