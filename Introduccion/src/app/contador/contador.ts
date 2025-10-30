@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Consola } from '../services/consola';
 
 @Component({
   selector: 'app-contador',
@@ -9,6 +10,10 @@ import { Component } from '@angular/core';
 })
 export class Contador {
 
+  constructor(private consola: Consola) {
+
+  }
+
   numero:number = 10;
 
   incrementar(){
@@ -16,6 +21,7 @@ export class Contador {
       this.numero = 10;
     } else {
     this.numero++;
+    this.consola.mostrarEnConsola("Se aumentó el contador " + this.numero);
     }
   }
 
@@ -24,6 +30,7 @@ export class Contador {
       this.numero = 0;
     } else {
     this.numero--;
+    this.consola.mostrarEnConsola("Se disminuyó el contador " + this.numero);
     }
   }
 
