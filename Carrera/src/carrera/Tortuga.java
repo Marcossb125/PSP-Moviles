@@ -21,17 +21,25 @@ public class Tortuga implements Runnable {
 		while (posicion < carrera.recorrido) {
 
 			if (posicion == 5) {
-				for (int k = 0; k <= 15; k++) {
 				try {
 					semaphore.acquire();
+				for (int k = 0; k <= 10; k++) {
+					if (posicion == 6) {
+						System.out.println(nombre + " Ha entrado en el tunel");
+						}
+				
 					this.posicion = this.posicion + this.velocidad;
 					System.out.println(nombre + ": " + posicion);
+				
+
+				}
+				System.out.println(nombre + " Ha salido del tunel");
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				} finally {
 					semaphore.release();
-
 				}
+				
 			} else {
 				this.posicion = this.posicion + this.velocidad;
 				System.out.println(nombre + ": " + posicion);
