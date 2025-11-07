@@ -20,7 +20,8 @@ public class Tortuga implements Runnable {
 	public void run() {
 		while (posicion < carrera.recorrido) {
 
-			if (posicion >= 5 && posicion < 15) {
+			if (posicion == 5) {
+				for (int k = 0; k <= 15; k++) {
 				try {
 					semaphore.acquire();
 					this.posicion = this.posicion + this.velocidad;
