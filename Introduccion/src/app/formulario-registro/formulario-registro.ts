@@ -1,6 +1,7 @@
 import { F } from '@angular/cdk/keycodes';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { LocalStorage } from '../services/local-storage';
 
 @Component({
   selector: 'app-formulario-registro',
@@ -14,7 +15,7 @@ export class FormularioRegistro {
 
   
   
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private storage:LocalStorage) {
     
     this.formulario = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
@@ -27,6 +28,7 @@ export class FormularioRegistro {
       console.log("el formulario contiene errores");
     } else {
     console.log(this.formulario.value);
+    this.storage.setItem("nombre", this.formulario.value.nombre)
     }
   }
 

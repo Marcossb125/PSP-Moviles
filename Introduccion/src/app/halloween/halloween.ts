@@ -4,6 +4,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { timer } from 'rxjs';
+import { LocalStorage } from '../services/local-storage';
 
 @Component({
   selector: 'app-formulario-registro',
@@ -32,7 +33,7 @@ export class Halloween {
 
 
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private storage:LocalStorage) {
 
     this.formulario = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(3)]],
@@ -80,16 +81,19 @@ export class Halloween {
       this.halloween = true;
 
     }
+
+    const datos = this.storage.getItem("formulario_halloween");
   }
 
-
+  
 
 
   mostrar() {
     if (this.formulario.invalid) {
       console.log("el formulario contiene errores");
     } else {
-      console.log(this.formulario.value);
+      const datos = {formulario:this.formulario.value}
+      this.storage.setItem("formulario_halloween", JSON.stringify(datos));
     }
   }
 
