@@ -8,25 +8,77 @@
     grid-template-columns: repeat(3, 150px);
     grid-template-rows: repeat(3, 150px);
 }
-.casilla{
+
+.casilla {
     display: flex;
     border: 2px solid black;
     align-items: center;
     justify-content: center;
 
 }
+
+.casilla-halloween {
+    display: flex;
+    border: 2px solid black;
+    align-items: center;
+    justify-content: center;
+    background-color: orangered;
+}
+
+.casilla-navidad {
+    display: flex;
+    border: 2px solid black;
+    align-items: center;
+    justify-content: center;
+    background-color: gold;
+}
+
 .agujero {
     border-radius: 50px;
     width: 100px;
     height: 100px;
     align-items: center;
 }
+
 .topo {
-    background-color: rgb(80, 31, 3);
-    cursor:pointer;
+    background-color: brown;
+    cursor: pointer;
 }
+
+.topo-halloween {
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    background-color: purple;
+}
+
+.topo-navidad {
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    background-color: lightgreen;
+}
+
 .vacio {
     background-color: black;
+}
+
+.vacio-halloween {
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    background-color: rgb(65, 21, 21);
+}
+
+.vacio-navidad {
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    background-color: darkgreen;
 }
 
 .contenedor-puntuacion {
@@ -35,8 +87,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
+
 .puntuacion {
     font-size: 30px;
     text-align: right;

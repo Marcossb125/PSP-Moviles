@@ -1,7 +1,8 @@
 @if (formulario1 == false) {
 <div class="contenedor-global">
     <div class="contenedor-añadir">
-        <button class="añadir" (click)="anadir()">Añadir</button>
+        <button (click)="anadir()"
+            [ngClass]="{'añadir-halloween' : eventos.halloween, 'añadir-navidad' : eventos.navidad, 'añadir' : eventos.normal}">Añadir</button>
     </div>
     <div class="gap"></div>
     <div cdkDropListGroup>
@@ -15,11 +16,13 @@
                 </div>
                 @for (item of toDo; track item) {
                 <mat-accordion>
-                    <mat-expansion-panel class="tarea" hideToggle cdkDrag>
+                    <mat-expansion-panel hideToggle cdkDrag
+                        [ngClass]="{'tarea halloween' : eventos.halloween, 'tarea navidad' : eventos.navidad, 'tarea normal' : eventos.normal}">
                         <mat-expansion-panel-header>
                             <mat-panel-title> {{ item.nombre }} </mat-panel-title>
                             <div class="contenedor-eliminar">
-                                <button class="eliminar" (click)="eliminar(toDo, item) ">eliminar</button>
+                                <button (click)="eliminar(toDo, item)"
+                                    [ngClass]="{'halloween-eliminar' : eventos.halloween, 'navidad-eliminar' : eventos.navidad, 'normal-eliminar' : eventos.normal}">eliminar</button>
                             </div>
                         </mat-expansion-panel-header>
                         <p>{{ item.descripcion }}</p>
@@ -38,11 +41,14 @@
                 </div>
                 @for (item of doing; track item) {
                 <mat-accordion>
-                    <mat-expansion-panel class="tarea" hideToggle cdkDrag>
+                    <mat-expansion-panel
+                        [ngClass]="{'tarea halloween' : eventos.halloween, 'tarea navidad' : eventos.navidad, 'tarea normal' : eventos.normal}"
+                        hideToggle cdkDrag>
                         <mat-expansion-panel-header>
                             <mat-panel-title> {{ item.nombre }} </mat-panel-title>
                             <div class="contenedor-eliminar">
-                                <button class="eliminar" (click)="eliminar(doing, item) ">eliminar</button>
+                                <button (click)="eliminar(doing, item) "
+                                    [ngClass]="{'halloween-eliminar' : eventos.halloween, 'navidad-eliminar' : eventos.navidad, 'normal-eliminar' : eventos.normal}">eliminar</button>
                             </div>
                         </mat-expansion-panel-header>
                         <p>{{ item.descripcion }}</p>
@@ -57,11 +63,14 @@
                 </div>
                 @for (item of done; track item) {
                 <mat-accordion>
-                    <mat-expansion-panel class="tarea" hideToggle cdkDrag>
+                    <mat-expansion-panel
+                        [ngClass]="{'tarea halloween' : eventos.halloween, 'tarea navidad' : eventos.navidad, 'tarea normal' : eventos.normal}"
+                        hideToggle cdkDrag>
                         <mat-expansion-panel-header>
                             <mat-panel-title> {{ item.nombre }} </mat-panel-title>
                             <div class="contenedor-eliminar">
-                                <button class="eliminar" (click)="eliminar(done, item) ">eliminar</button>
+                                <button (click)="eliminar(done, item)"
+                                    [ngClass]="{'halloween-eliminar' : eventos.halloween, 'navidad-eliminar' : eventos.navidad, 'normal-eliminar' : eventos.normal}">eliminar</button>
                             </div>
                         </mat-expansion-panel-header>
                         <p>{{ item.descripcion }}</p>

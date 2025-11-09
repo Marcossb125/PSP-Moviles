@@ -1,16 +1,21 @@
-<div class =contenedor-puntuacion>
+<div class=contenedor-puntuacion>
     <p class="puntuacion">{{ numero }}</p>
 </div>
 
 <div class="tablero">
     @for (topo of topos; track $index) {
-    <div class="casilla">
-        <button *ngIf="topo == 1; else nada" class="agujero topo" (click)="incrementar($index)"></button>
+    <div
+        [ngClass]="{'casilla-halloween' : eventos.halloween, 'casilla-navidad' : eventos.navidad, 'casilla' : eventos.normal}">
+        <button *ngIf="topo == 1; else nada"
+            [ngClass]="{'topo-halloween' : eventos.halloween, 'agujero topo-navidad' : eventos.navidad, 'agujero topo' : eventos.normal}"
+            (click)="incrementar($index)"></button>
     </div>
     }
 
 </div>
 
 <ng-template #nada>
-    <div class="agujero vacio"></div>
+    <div
+        [ngClass]="{'vacio-halloween' : eventos.halloween, 'agujero vacio-navidad' : eventos.navidad, 'agujero vacio' : eventos.normal}">
+    </div>
 </ng-template>

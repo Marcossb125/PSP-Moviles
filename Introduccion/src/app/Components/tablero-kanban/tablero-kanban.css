@@ -15,14 +15,44 @@
 
 .tarea {
     row-gap: 30px;
+}
+
+.halloween {
+    background-color: orange;
+}
+
+.navidad {
+    background-color: rgb(253, 136, 136);
+}
+
+.normal {
     background-color: aquamarine;
     box-shadow: 0 0 20px aqua;
 }
 
 .eliminar {
     font-size: 10px;
-    background-color: red;
     align-self: self-end;
+}
+
+.halloween-eliminar {
+    font-size: 10px;
+    align-self: self-end;
+    background-color: rgb(65, 21, 21);
+    color: white
+}
+
+.navidad-eliminar {
+    font-size: 10px;
+    align-self: self-end;
+    background-color: darkgreen;
+    color: gold;
+}
+
+.normal-eliminar {
+    font-size: 10px;
+    align-self: self-end;
+    background-color: red;
 }
 
 .mensaje-error {
@@ -48,6 +78,24 @@
 
 .añadir {
     background-color: aliceblue;
+    border: black 2px solid;
+    border-radius: 15px;
+    width: 1150px;
+    height: 25px;
+}
+
+.añadir-halloween {
+    background-color: rgb(65, 21, 21);
+    color: white;
+    border: black 2px solid;
+    border-radius: 15px;
+    width: 1150px;
+    height: 25px;
+}
+
+.añadir-navidad {
+    background-color: rgb(253, 136, 136);
+    color: gold;
     border: black 2px solid;
     border-radius: 15px;
     width: 1150px;

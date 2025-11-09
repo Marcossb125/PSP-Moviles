@@ -5,10 +5,12 @@ import { CdkDragDrop, CdkDrag, CdkDropList, CdkDropListGroup, moveItemInArray, t
 import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { LocalStorage } from '../../services/local-storage';
+import { Eventos } from '../../services/eventos';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tablero-kanban',
-  imports: [DragDropModule, CdkDrag, CdkDropList, CdkDropListGroup, ReactiveFormsModule, MatExpansionModule],
+  imports: [DragDropModule, CdkDrag, CdkDropList, CdkDropListGroup, ReactiveFormsModule, MatExpansionModule, CommonModule],
   templateUrl: './tablero-kanban.html',
   styleUrl: './tablero-kanban.css'
 })
@@ -23,7 +25,7 @@ export class TableroKanban {
   doing: Tarea[] = []
   done: Tarea[] = []
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, public eventos: Eventos) {
 
     this.formulario = this.fb.group({
       nombre: ['', [Validators.required]],

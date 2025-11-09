@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Consola } from '../../services/consola';
+import { Eventos } from '../../services/eventos';
 
 @Component({
   selector: 'app-topo',
@@ -9,16 +10,16 @@ import { Consola } from '../../services/consola';
   styleUrl: './topo.css'
 })
 export class Topo {
-  nuevotopo:number | undefined;
+  nuevotopo: number | undefined;
   numero: number = 0;
   topos: number[] = [0, 0, 0, 0, 1, 0, 0, 0, 0]
 
-  constructor(private c: Consola) {
-  
+  constructor(private c: Consola, public eventos: Eventos) {
+
   }
 
-  aparicion(topo:number) {
-    this.topos = [0,0,0,0,0,0,0,0,0]
+  aparicion(topo: number) {
+    this.topos = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     this.nuevotopo = Math.round(Math.random() * 8);
     while (this.nuevotopo == topo) {
       this.nuevotopo = Math.round(Math.random() * 8);
@@ -26,14 +27,14 @@ export class Topo {
     this.topos[this.nuevotopo] = 1;
 
   }
-  incrementar(topo:number) {
+  incrementar(topo: number) {
     this.numero++;
     this.c.matarTopo();
     this.c.mostrarEnConsola("Has matado " + this.c.toposMatados + " topos");
     this.aparicion(topo);
   }
 
-  fallo(topo:number) {
+  fallo(topo: number) {
     this.numero--;
     this.aparicion(topo);
   }
