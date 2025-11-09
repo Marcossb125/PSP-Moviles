@@ -4,7 +4,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { timer } from 'rxjs';
-import { LocalStorage } from '../services/local-storage';
+import { LocalStorage } from '../../services/local-storage';
 
 @Component({
   selector: 'app-formulario-registro',

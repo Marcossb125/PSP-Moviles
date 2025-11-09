@@ -4,7 +4,7 @@ import { CdkDragDrop, CdkDrag, CdkDropList, CdkDropListGroup, moveItemInArray, t
   from '@angular/cdk/drag-drop';
 import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { LocalStorage } from '../services/local-storage';
+import { LocalStorage } from '../../services/local-storage';
 
 @Component({
   selector: 'app-tablero-kanban',

@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { FormularioRegistro } from './formulario-registro/formulario-registro';
-import { Contador } from './contador/contador';
-import { Lista } from './ListaPersonajes/lista/lista';
-import { Topo } from './topo/topo';
-import { Halloween } from './halloween/halloween';
-import { TableroKanban } from './tablero-kanban/tablero-kanban';
+import { FormularioRegistro } from './Components/formulario-registro/formulario-registro';
+import { Contador } from './Components/contador/contador';
+import { Lista } from './Components/ListaPersonajes/lista/lista';
+import { Topo } from './Components/topo/topo';
+import { Halloween } from './Components/halloween/halloween';
+import { TableroKanban } from './Components/tablero-kanban/tablero-kanban';
 
 export const routes: Routes = [
     { path: 'contador', component: Contador},

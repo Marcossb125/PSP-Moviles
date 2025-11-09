@@ -6,7 +6,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
-import { LocalStorage } from '../services/local-storage';
+import { Eventos } from '../../services/eventos';
 
 
 @Component({
@@ -16,17 +16,15 @@ import { LocalStorage } from '../services/local-storage';
   styleUrl: './navbar.css'
 })
 export class NavBar {
+  constructor(public eventos:Eventos) {
+
+  }
+
 
   nombre:String="";
-  constructor(private storage:LocalStorage) {
 
-  }
-
-  ngOnInit() {
-    this.storage.getItem("nombre");
-  }
+  
 
   pi:string="pi pi piiiiiiiiii";
-  halloween:boolean = true;
 
 }

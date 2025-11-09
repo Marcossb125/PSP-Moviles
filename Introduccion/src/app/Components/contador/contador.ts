@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Consola } from '../services/consola';
+import { Consola } from '../../services/consola';
 
 @Component({
   selector: 'app-contador',

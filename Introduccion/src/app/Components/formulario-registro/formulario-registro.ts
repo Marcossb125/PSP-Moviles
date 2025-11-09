@@ -1,7 +1,7 @@
 import { F } from '@angular/cdk/keycodes';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-import { LocalStorage } from '../services/local-storage';
+import { LocalStorage } from '../../services/local-storage';
 
 @Component({
   selector: 'app-formulario-registro',

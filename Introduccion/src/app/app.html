@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
 
-<div class="contendedor-root">
+<div [ngClass]="{ 'contenedor-root': eventos.normal, 'halloween': eventos.halloween, 'navidad' : eventos.navidad}">
 <router-outlet></router-outlet>
 </div>

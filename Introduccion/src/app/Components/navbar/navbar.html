@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" [ngClass]="{ 'halloween': halloween }">
+<mat-toolbar color="primary" [ngClass]="{ 'halloween': eventos.halloween, 'navidad': eventos.navidad, 'normal': eventos.normal }">
   <span class="example-spacer"></span>
 <span class="opcion opcion1" matButton [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></span>
     <mat-menu class #menu="matMenu">
@@ -21,7 +21,21 @@
   <span class="example-spacer"></span>
   <span class="opcion" routerLink="/halloween">formularioHalloween</span>
   <span class="example-spacer"></span>
-  <span class="opcion"> <mat-icon>bolt</mat-icon></span>
-
-  <span class="opcion"> <mat-slide-toggle [(ngModel)]="halloween"></mat-slide-toggle></span>
+  
+<span class="opcion opcion1" matButton [matMenuTriggerFor]="menu2"><mat-icon>more_vert</mat-icon></span>
+  <span class="opcion"> <mat-menu class #menu2="matMenu">
+    <div>
+    <span class="opcion"> <mat-icon>bolt</mat-icon></span>
+    <mat-slide-toggle (click)="eventos.esHalloween()" [checked]="eventos.halloween" [disabled]="eventos.halloween"></mat-slide-toggle>
+    </div>
+    <div>
+    <span class="opcion"> <mat-icon>bolt</mat-icon></span>
+    <mat-slide-toggle (click)="eventos.esNavidad()" [checked]="eventos.navidad" [disabled]="eventos.navidad"></mat-slide-toggle>
+    </div>
+    <div>
+    <span class="opcion"> <mat-icon>bolt</mat-icon></span>
+    <mat-slide-toggle (click)="eventos.esNada()" [checked]="eventos.normal" [disabled]="eventos.normal"></mat-slide-toggle>
+    </div>
+  </mat-menu>
+  </span>
 </mat-toolbar>

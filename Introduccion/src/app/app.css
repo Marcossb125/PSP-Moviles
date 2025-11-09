@@ -26,23 +26,33 @@
         font-weight: 700;
 }
 
-.contendedor-root{
+.contenedor-root{
     width: 100%;
-    height: 91vh;
+    height: 93%;
     background-color: antiquewhite;
-    border: solid 2px black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-top: black 2px solid;
 }
-.contendedor-root-halloween{
-    width: 100%;
-    height: 91vh;
+.halloween{
     background-color: blueviolet;
-    border: solid 2px orangered;
+    width: 100%;
+    height: 93%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-top: orange 2px solid;
+}
+.navidad{
+    background-color: lightgreen;
+    width: 100%;
+    height: 93%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: yellow 2px solid;
 }
