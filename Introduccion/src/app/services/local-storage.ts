@@ -8,9 +8,17 @@ export class LocalStorage {
   setItem(key:string, item:string){
     localStorage.setItem(key, item);
   }
-  getItem(key:string){
-    localStorage.removeItem(key);
-  }
+  
+  getNombre(){
+      return localStorage.getItem("nombre");
+    }
+    setNombre(key:string, nombre:string) {
+      return localStorage.setItem(key, nombre);
+    }
+    getItem(key:string){
+      return localStorage.getItem(key);
+    }
+  
 
   clear(){
     localStorage.clear();

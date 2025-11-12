@@ -8,7 +8,7 @@
     <button mat-menu-item routerLink="/carrera">Carrera</button>
     <button mat-menu-item routerLink="/lista">ListaPersonajes</button>
     <button mat-menu-item routerLink="/formulario-registro">Formulario</button>
-    <button mat-menu-item routerLink="/halloween">formularioHalloween</button>
+    <button mat-menu-item routerLink="/halloween">{{nombre}}</button>
     <button mat-menu-item routerLink="/kanban">kanban</button>
   </mat-menu>
   <span class="example-spacer"></span>
@@ -16,28 +16,28 @@
   <span class="example-spacer"></span>
   <span class="opcion" routerLink="/matatopos">Matatopos</span>
   <span class="example-spacer"></span>
-  <span class="opcion" routerLink="/lista">{{nombre}}</span>
+  <span class="opcion" routerLink="/lista">ListaPersonajes</span>
   <span class="example-spacer"></span>
   <span class="opcion" routerLink="/formulario-registro">Formulario</span>
   <span class="example-spacer"></span>
-  <span class="opcion" routerLink="/halloween">formularioHalloween</span>
+  <span class="opcion" routerLink="/halloween">{{nombre}}</span>
   <span class="example-spacer"></span>
 
-  <span class="opcion opcion1" matButton [matMenuTriggerFor]="menu2"><mat-icon>more_vert</mat-icon></span>
+  <span class="opcion opcion1" matButton [matMenuTriggerFor]="menu2">eventos<mat-icon>expand_more</mat-icon></span>
   <span class="opcion"> <mat-menu class #menu2="matMenu">
       <div>
 
-        <span class="opcion">HW</span>
+        <img src="Halloween/skull.png">
         <mat-slide-toggle (click)="eventos.esHalloween()" [checked]="eventos.halloween"
           [disabled]="eventos.halloween"></mat-slide-toggle>
       </div>
       <div>
-        <span class="opcion">Xmas</span>
+        <img src="Navidad/navidad_logo.png">
         <mat-slide-toggle (click)="eventos.esNavidad()" [checked]="eventos.navidad"
           [disabled]="eventos.navidad"></mat-slide-toggle>
       </div>
       <div>
-        <span class="opcion">basic</span>
+        <mat-icon>home</mat-icon>
         <mat-slide-toggle (click)="eventos.esNada()" [checked]="eventos.normal"
           [disabled]="eventos.normal"></mat-slide-toggle>
       </div>

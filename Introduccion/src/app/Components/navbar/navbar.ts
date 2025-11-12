@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
 import { Eventos } from '../../services/eventos';
+import { LocalStorage } from '../../services/local-storage';
 
 
 @Component({
@@ -15,13 +16,22 @@ import { Eventos } from '../../services/eventos';
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
 })
-export class NavBar {
-  constructor(public eventos: Eventos) {
-
+export class NavBar implements OnInit{
+  constructor(public eventos: Eventos, private storage:LocalStorage) {
+    
   }
 
+nombre:string | null = "";
+  
 
-  nombre: String = "";
+  ngOnInit() {
+    console.log(this.storage.getNombre());
+    this.nombre=this.storage.getNombre();
+    if (this.nombre == null) {
+      this.nombre = "formularioHalloween";
+    } 
+  }
+
 
 
 

@@ -14,7 +14,7 @@ import { LocalStorage } from '../../services/local-storage';
 })
 export class Halloween {
 
-  invitado: boolean = false;
+  datosHalloween:String[] | null = [];
   halloween: boolean = false;
 
   halloweenD: Date = new Date("2025-10-31");
@@ -28,7 +28,7 @@ export class Halloween {
   minutos: number = 0;
 
 
-
+  invitado:boolean;
   formulario: FormGroup;
 
 
@@ -44,6 +44,14 @@ export class Halloween {
       aceptaReglas: ['', [Validators.requiredTrue]]
 
     });
+      const datos_halloween = storage.getItem('formulario_halloween');
+      if (datos_halloween) {
+        const {formulario2} = JSON.parse(datos_halloween);
+        this.formulario = formulario2;
+        this.invitado = true;
+      } else {
+      this.invitado = false;
+    }
 
     while (this.segundos >= 60) {
       this.minutos++;
@@ -82,7 +90,6 @@ export class Halloween {
 
     }
 
-    const datos = this.storage.getItem("formulario_halloween");
   }
 
   
@@ -92,8 +99,10 @@ export class Halloween {
     if (this.formulario.invalid) {
       console.log("el formulario contiene errores");
     } else {
-      const datos = {formulario:this.formulario.value}
-      this.storage.setItem("formulario_halloween", JSON.stringify(datos));
+      
+      
+
+      
     }
   }
 
@@ -102,6 +111,9 @@ export class Halloween {
   invitacion() {
     if (this.formulario.valid) {
       this.invitado = true;
+      console.log("hola");
+      this.storage.setNombre("formulario_halloween", JSON.stringify(this.formulario));
+      this.storage.setItem("formulario_hallowee", "patata");
     }
 
 
