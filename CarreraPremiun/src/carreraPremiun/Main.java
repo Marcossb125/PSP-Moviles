@@ -5,10 +5,11 @@ public class Main {
 	
 	
 	public static void main(String[] args) {
+		Circuito circuito = new Circuito (200, 50, 150);
 		
-		Animal pajaro = new Pajaro ("Manjon");
-		Animal tortuga = new Tortuga ("Hugo");
-		Animal liebre = new Liebre ("Adrian");
+		Animal pajaro = new Pajaro ("Manjon", circuito);
+		Animal tortuga = new Tortuga ("Hugo", circuito);
+		Animal liebre = new Liebre ("Adrian", circuito);
 		
 		Thread hilo1 = new Thread (pajaro);
 		Thread hilo2 = new Thread (tortuga);
@@ -21,7 +22,7 @@ public class Main {
 		try {
 			hilo1.join();
 			hilo2.join();
-			hilo3.join();
+			//hilo3.join();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

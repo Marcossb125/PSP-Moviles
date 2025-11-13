@@ -9,43 +9,15 @@ public class Pajaro extends Animal {
 	int velocidad_volando = 10;
 	int velocidad_volando_atras = -10;
 	
-	Pajaro(String nombre, Semaphore semaphore) {
-		super(nombre, semaphore);
+	Pajaro(String nombre, Circuito circuito) {
+		super(nombre, circuito);
 	}
 
 	
 	public void correr () {
 		
-		if (posicion >= 5) {
-			while (posicion < 15) {
-			try {
-				semaphore.acquire();
-				correr();
-		this.volando = ra.nextBoolean();
-		if (volando) {
-			direccion = ra.nextBoolean();
-			if (direccion) {
-				System.out.println ("\033[31m*" + nombre + " está volando hacia delante\033[0m");
-				super.avanzar(velocidad_volando);
-			} else {
-				System.out.println("\033[31m*" + nombre + " está volando hacia atrás\033[0m");
-				super.avanzar(velocidad_volando_atras);
-			}
-		} else {
-			System.out.println("\033[31m*" + nombre + " está caminando\033[0m");
-			super.avanzar(velocidad_caminando);
-		}
+		
 			
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			} finally {
-				semaphore.release();
-	
-	
-		}
-			}
-	} else {
-		correr();
 		this.volando = ra.nextBoolean();
 		if (volando) {
 			direccion = ra.nextBoolean();
@@ -61,5 +33,6 @@ public class Pajaro extends Animal {
 			super.avanzar(velocidad_caminando);
 		}
 	}
-	}
+	
 }
+
