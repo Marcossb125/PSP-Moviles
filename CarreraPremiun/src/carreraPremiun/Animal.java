@@ -10,6 +10,7 @@ public class Animal implements Runnable {
 	public static int puesto = 1;
 	public int velocidad = 1;
 	public boolean está_en_el_tunel = false;
+	public boolean tunel_pasado = false;
 
 	public Animal(String nombre, Circuito circuito) {
 		this.nombre = nombre;
@@ -18,10 +19,6 @@ public class Animal implements Runnable {
 
 	public void run() {
 		while (posicion < 50) {
-			if (circuito.tunel_ocupado && posicion > 5 && posicion < 25 && !está_en_el_tunel) {
-				posicion = 5;
-				System.out.println("\033[30m" + nombre + " está en la posicion " + posicion + "\033[30m");
-			}
 			if (posicion >= 5 && posicion < 25) {
 				
 					try {
