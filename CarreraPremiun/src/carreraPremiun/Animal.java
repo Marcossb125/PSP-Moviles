@@ -43,6 +43,7 @@ public class Animal implements Runnable {
 						e.printStackTrace();
 					} finally {
 						circuito.tunel.release();
+						circuito.tunelOcupadoCambio();
 					}
 				
 				} else {
@@ -76,7 +77,9 @@ public class Animal implements Runnable {
 		} else if (posicion > 50) {
 			this.posicion = 50;
 		}
-		
+		if (circuito.tunel_ocupado && posicion > 5 && posicion < 25 && !está_en_el_tunel) {
+			posicion = 5;
+		}
 		System.out.println("\033[30m" + nombre + " está en la posicion " + posicion + "\033[30m");
 	}
 
