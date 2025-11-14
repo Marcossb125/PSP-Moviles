@@ -3,8 +3,8 @@ import java.util.concurrent.Semaphore;
 public class Tortuga extends Animal {
 	int velocidad = 2;
 	
-	Tortuga(String nombre, Circuito circuito) {
-		super(nombre, circuito);
+	Tortuga(String nombre, Circuito circuito, Viento viento) {
+		super(nombre, circuito, viento);
 	}
 	
 	@Override

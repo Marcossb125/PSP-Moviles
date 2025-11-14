@@ -9,8 +9,8 @@ public class Pajaro extends Animal {
 	int velocidad_volando = 10;
 	int velocidad_volando_atras = -10;
 	
-	Pajaro(String nombre, Circuito circuito) {
-		super(nombre, circuito);
+	Pajaro(String nombre, Circuito circuito, Viento viento) {
+		super(nombre, circuito, viento);
 	}
 
 	

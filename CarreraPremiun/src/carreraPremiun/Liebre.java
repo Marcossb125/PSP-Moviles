@@ -3,8 +3,8 @@ import java.util.concurrent.Semaphore;
 public class Liebre extends Animal{
 	int ronda = 0;
 	int velocidad = 5;
-	Liebre (String nombre, Circuito circuito) {
-		super(nombre, circuito);
+	Liebre (String nombre, Circuito circuito, Viento viento) {
+		super(nombre, circuito, viento);
 	}
 	
 	public void correr() {

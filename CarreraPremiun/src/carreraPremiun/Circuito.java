@@ -1,12 +1,17 @@
 package carreraPremiun;
 import java.util.concurrent.Semaphore;
+import java.util.Random;
 public class Circuito {
+	Random ra = new Random ();
+	
 	public int recorrido;
 	public Semaphore tunel = new Semaphore (1);
 	public int puesto = 0;
 	public int inicio_tunel;
 	public int final_tunel;
 	public boolean tunel_ocupado = false;
+	public boolean viento;
+	public boolean viento_direccion;
 	
 	Circuito(int recorrido, int inicio_tunel, int final_tunel) {
 		this.recorrido = recorrido;
@@ -22,4 +27,13 @@ public class Circuito {
 		return puesto;
 	}
 	
+	public void run() throws InterruptedException {
+		viento = ra.nextBoolean();
+		viento_direccion = ra.nextBoolean();
+		wait();
+	}
+	
+	public void activarViento () {
+		notify();
+	}
 }

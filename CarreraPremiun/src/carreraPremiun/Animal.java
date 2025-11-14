@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Animal implements Runnable {
 	public static Random ra = new Random();
+	public int v;
 	public Circuito circuito;
 	public String nombre;
 	public int posicion = 0;
@@ -11,47 +12,53 @@ public class Animal implements Runnable {
 	public int velocidad = 1;
 	public boolean está_en_el_tunel = false;
 	public boolean tunel_pasado = false;
+	public int turnos = 0;
+	public Viento viento;
 
-	public Animal(String nombre, Circuito circuito) {
+	public Animal(String nombre, Circuito circuito, Viento viento) {
 		this.nombre = nombre;
 		this.circuito = circuito;
 	}
 
 	public void run() {
 		while (posicion < 50) {
+			if (v == 1) {
+				viento.activarViento();
+			}
 			if (posicion >= 5 && posicion < 25) {
-				
-					try {
-						circuito.tunelOcupadoCambio();
-						circuito.tunel.acquire();
-						while (posicion < 25 && posicion >= 5) {
+
+				try {
+					circuito.tunelOcupadoCambio();
+					circuito.tunel.acquire();
+					while (posicion < 25 && posicion >= 5) {
 						if (!está_en_el_tunel) {
-								System.out.println("\033[38m" + nombre + " Acaba de entrar al tunel");
-								está_en_el_tunel = true;
+							System.out.println("\033[38m" + nombre + " Acaba de entrar al tunel");
+							está_en_el_tunel = true;
 						}
 						correr();
-					
 
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+						try {
+							Thread.sleep(1000);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
 					}
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} finally {
+					circuito.tunel.release();
+					circuito.tunelOcupadoCambio();
 				}
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					} finally {
-						circuito.tunel.release();
-						circuito.tunelOcupadoCambio();
-					}
-				
-				} else {
-					if (está_en_el_tunel) {
-						System.out.println("\033[38m" + nombre + " Acaba de salir del tunel");
-						está_en_el_tunel = false;
-						circuito.tunelOcupadoCambio();
-					}
+
+			} else {
+				if (circuito.viento) {
+					
+				}
+				if (está_en_el_tunel) {
+					System.out.println("\033[38m" + nombre + " Acaba de salir del tunel");
+					está_en_el_tunel = false;
+					circuito.tunelOcupadoCambio();
+				}
 				correr();
 				try {
 					Thread.sleep(1000);
@@ -59,7 +66,7 @@ public class Animal implements Runnable {
 					e.printStackTrace();
 				}
 			}
-		
+
 		}
 		System.out.println("\033[30m" + nombre + " ha terminado y ha quedado " + puesto + "\033[30m");
 		puesto++;
