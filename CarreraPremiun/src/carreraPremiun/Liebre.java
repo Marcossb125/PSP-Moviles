@@ -12,7 +12,7 @@ public class Liebre extends Animal{
 		if (ronda >= 4) {
 			System.out.println("\033[36m" + nombre + " está descansando\033[36m");
 			
-			if (ronda == 14) {
+			if (ronda == 14 || viento.viento) {
 				ronda = 0;
 			}
 		} else {

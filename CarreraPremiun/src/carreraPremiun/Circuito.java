@@ -12,11 +12,13 @@ public class Circuito {
 	public boolean tunel_ocupado = false;
 	public boolean viento;
 	public boolean viento_direccion;
+	public int concursantes;
 	
-	Circuito(int recorrido, int inicio_tunel, int final_tunel) {
+	Circuito(int recorrido, int inicio_tunel, int final_tunel, int concursantes) {
 		this.recorrido = recorrido;
 		this.inicio_tunel = inicio_tunel;
 		this.final_tunel = final_tunel;
+		this.concursantes = concursantes;
 	}
 	public void tunelOcupadoCambio () {
 		tunel_ocupado = !tunel_ocupado;

@@ -5,7 +5,7 @@ public class Main {
 	
 	
 	public static void main(String[] args) {
-		Circuito circuito = new Circuito (200, 50, 150);
+		Circuito circuito = new Circuito (200, 50, 150, 3);
 		Viento viento = new Viento ();
 		
 		Animal pajaro = new Pajaro ("Manjon", circuito, viento);
@@ -21,11 +21,13 @@ public class Main {
 		hilo1.start();
 		hilo2.start();
 		hilo3.start();
+		v.start();
 		
 		try {
 			hilo1.join();
 			hilo2.join();
 			hilo3.join();
+			v.interrupt();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

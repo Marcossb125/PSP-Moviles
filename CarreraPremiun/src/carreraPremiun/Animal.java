@@ -8,20 +8,21 @@ public class Animal implements Runnable {
 	public Circuito circuito;
 	public String nombre;
 	public int posicion = 0;
-	public static int puesto = 1;
+	public static int puesto = 0;
 	public int velocidad = 1;
 	public boolean está_en_el_tunel = false;
 	public boolean tunel_pasado = false;
-	public int turnos = 0;
+	
 	public Viento viento;
 
 	public Animal(String nombre, Circuito circuito, Viento viento) {
 		this.nombre = nombre;
 		this.circuito = circuito;
+		this.viento = viento;
 	}
 
 	public void run() {
-		while (posicion < 50) {
+		while (posicion < 40) {
 			if (v == 1) {
 				viento.activarViento();
 			}
@@ -68,8 +69,12 @@ public class Animal implements Runnable {
 			}
 
 		}
-		System.out.println("\033[30m" + nombre + " ha terminado y ha quedado " + puesto + "\033[30m");
 		puesto++;
+		System.out.println("\033[30m" + nombre + " ha terminado y ha quedado " + puesto + "\033[30m");
+		
+		if (puesto >= circuito.concursantes) {
+			viento.finalizar();
+		}
 
 	}
 
@@ -88,6 +93,7 @@ public class Animal implements Runnable {
 			posicion = 5;
 		}
 		System.out.println("\033[30m" + nombre + " está en la posicion " + posicion + "\033[30m");
+		
 	}
 
 	public String getPosicion() {
