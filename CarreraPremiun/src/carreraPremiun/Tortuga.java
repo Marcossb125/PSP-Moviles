@@ -20,7 +20,7 @@ public class Tortuga extends Animal {
 			avanzar(velocidad);
 		}
 			
-		if (posicion % 10 == 0 && posicion != 0) {
+		if (posicion % 10 == 0 && posicion != 0 && posicion != circuito.recorrido) {
 			charcoPisado++;
 			System.out.println("\033[35m" + nombre + " ha pisado un charco y ha aumentado su velocidad");
 		}

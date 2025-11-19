@@ -51,7 +51,7 @@ public class Pajaro extends Animal {
 		} else {
 			System.out.println("\033[31m*" + nombre + " está caminando\033[0m");
 			super.avanzar(velocidad_caminando);
-			if (posicion % 10 == 0 && posicion != 0) {
+			if (posicion % 10 == 0 && posicion != 0 && posicion != circuito.recorrido) {
 				System.out.println("\033[35m" + nombre + " ha pisado un charco y se ha resbalado");
 				charcoPisado++;
 			}

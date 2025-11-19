@@ -24,7 +24,7 @@ public class Liebre extends Animal {
 				}
 			} else {
 				super.avanzar(velocidad);
-				if (posicion % 10 == 0 && posicion != 0) {
+				if (posicion % 10 == 0 && posicion != 0 && posicion != circuito.recorrido) {
 					charcoPisado++;
 					System.out.println("\033[35m" + nombre + " ha pisado un charco y se ha resbalado");
 				}
