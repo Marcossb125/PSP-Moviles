@@ -31,10 +31,6 @@ public class Viento implements Runnable {
 		}
 		}
 	}
-	
-	public void activarViento () {
-		notify();
-	}
 	public void finalizar () {
 		terminar = true;
 	}
