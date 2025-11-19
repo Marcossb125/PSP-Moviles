@@ -22,16 +22,16 @@ public class Animal implements Runnable {
 	}
 
 	public void run() {
-		while (posicion < 40) {
+		while (posicion < circuito.recorrido) {
 			if (v == 1) {
 				viento.activarViento();
 			}
-			if (posicion >= 5 && posicion < 25) {
+			if (posicion < circuito.final_tunel && posicion >= circuito.inicio_tunel) {
 
 				try {
 					circuito.tunelOcupadoCambio();
 					circuito.tunel.acquire();
-					while (posicion < 25 && posicion >= 5) {
+					while (posicion < circuito.final_tunel && posicion >= circuito.inicio_tunel) {
 						if (!está_en_el_tunel) {
 							System.out.println("\033[38m" + nombre + " Acaba de entrar al tunel");
 							está_en_el_tunel = true;
@@ -52,9 +52,6 @@ public class Animal implements Runnable {
 				}
 
 			} else {
-				if (circuito.viento) {
-					
-				}
 				if (está_en_el_tunel) {
 					System.out.println("\033[38m" + nombre + " Acaba de salir del tunel");
 					está_en_el_tunel = false;
@@ -86,11 +83,8 @@ public class Animal implements Runnable {
 		this.posicion = posicion + velocidad;
 		if (posicion < 0) {
 			this.posicion = 0;
-		} else if (posicion > 50) {
-			this.posicion = 50;
-		}
-		if (circuito.tunel_ocupado && posicion > 5 && posicion < 25 && !está_en_el_tunel) {
-			posicion = 5;
+		} else if (posicion > circuito.recorrido) {
+			this.posicion = circuito.recorrido;
 		}
 		System.out.println("\033[30m" + nombre + " está en la posicion " + posicion + "\033[30m");
 		

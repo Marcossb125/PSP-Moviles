@@ -28,14 +28,4 @@ public class Circuito {
 		puesto++;
 		return puesto;
 	}
-	
-	public void run() throws InterruptedException {
-		viento = ra.nextBoolean();
-		viento_direccion = ra.nextBoolean();
-		wait();
-	}
-	
-	public void activarViento () {
-		notify();
-	}
 }
