@@ -1,0 +1,36 @@
+.click_contenedor{
+    width:500px;
+    height:500px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.click{
+    width: 159px;
+    height: 159px;
+    border-radius: 90px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background-color: antiquewhite;
+    cursor:pointer;
+    transition: transform 0.2s ease;
+}
+.puntuación_contenedor{
+    width:500px;
+    height:60px;
+}
+.puntuacion{
+    color: darkblue;
+    font-size: 60px;
+}
+
+.click.animar {
+    transform: scale(1.2); /* lo hace más grande */
+}

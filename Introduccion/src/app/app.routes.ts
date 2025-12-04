@@ -5,6 +5,7 @@ import { Lista } from './Components/ListaPersonajes/lista/lista';
 import { Topo } from './Components/topo/topo';
 import { Halloween } from './Components/halloween/halloween';
 import { TableroKanban } from './Components/tablero-kanban/tablero-kanban';
+import { Clicker } from './clicker/clicker';
 
 export const routes: Routes = [
     { path: 'contador', component: Contador},
@@ -13,4 +14,5 @@ export const routes: Routes = [
     { path: 'formulario-registro', component: FormularioRegistro}, 
     { path: 'halloween', component: Halloween},
     { path: 'kanban', component: TableroKanban},
+    { path: 'clicker', component: Clicker}
 ];
