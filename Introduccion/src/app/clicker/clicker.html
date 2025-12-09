@@ -1,10 +1,43 @@
 
-
-<div class= "click_contenedor">
-    <div class="puntuacion_contenedor">
-        <p class="puntuacion">{{dinero}}</p>
+<div class="contenedor_principal">
+  
+  <div class="columna_izquierda">
+    <h2>Mejoras de Click</h2>
+    <div *ngFor="let m of mejorasClick" class="mejora_item">
+      <p>
+        <strong>{{ m.nombre }}</strong><br>
+        Nivel: {{ m.nivel }}<br>
+        +{{ m.aumento }} por click<br>
+        Coste: {{ formatear(m.coste) }}
+      </p>
+      <button (click)="comprarClick(m)">Comprar</button>
     </div>
+  </div>
+
+  <div class="click_contenedor">
+    <p class="puntuacion">{{ formatear(dinero) }} monedas</p>
+    <p class="secundario">+{{ formatear(monedasPorSegundo) }} / segundo</p>
+
     <button class="click" (click)="sumar()" [class.animar]="botonPulsado">
-        <img src="pngs/Vergil_Clicker.png">
+      <img src="pngs/Vergil_Clicker.png">
     </button>
+
+    <button class="boton_reiniciar" (click)="resetearProgreso()">
+      Reiniciar Progreso
+    </button>
+  </div>
+
+  <div class="columna_derecha">
+    <h2>Mejoras de Producción</h2>
+    <div *ngFor="let m of mejorasProduccion" class="mejora_item">
+      <p>
+        <strong>{{ m.nombre }}</strong><br>
+        Compradas: {{ m.cantidad }}<br>
+        Producción: +{{ m.produccion }} /s<br>
+        Coste: {{ formatear(m.coste) }}
+      </p>
+      <button (click)="comprarProduccion(m)">Comprar</button>
+    </div>
+  </div>
+
 </div>

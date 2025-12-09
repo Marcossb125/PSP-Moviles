@@ -1,11 +1,58 @@
-.click_contenedor{
-    width:500px;
-    height:500px;
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.contenedor_principal {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    padding: 0;
+    gap: 0;
+    margin: 0;
+    margin-top: 80px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.columna_izquierda,
+.columna_derecha {
+    flex: 0 0 300px;
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px 10px;
+}
+
+.columna_izquierda {
+    padding-left: 20px;
+}
+
+.columna_derecha {
+    padding-right: 20px;
+}
+
+.columna_izquierda h2,
+.columna_derecha h2 {
+    text-align: center;
+    color: darkblue;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.click_contenedor{
+    flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 100%;
 }
 
 .click{
@@ -21,16 +68,84 @@
     background-color: antiquewhite;
     cursor:pointer;
     transition: transform 0.2s ease;
+    margin: 20px 0;
 }
-.puntuación_contenedor{
-    width:500px;
-    height:60px;
-}
+
 .puntuacion{
     color: darkblue;
     font-size: 60px;
+    margin: 10px 0;
 }
 
 .click.animar {
-    transform: scale(1.2); /* lo hace más grande */
+    transform: scale(1.2);
+}
+
+.secundario {
+  font-size: 20px;
+  color: darkred;
+  margin: 5px 0;
+}
+
+button {
+  margin: 5px 0;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.mejora_item {
+  background-color: #f5f5f5;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+.mejora_item p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.mejora_item button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.mejora_item button:hover {
+  background-color: #45a049;
+}
+
+.mejora_item button:active {
+  transform: scale(0.98);
+}
+
+.boton_reiniciar {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.boton_reiniciar:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.boton_reiniciar:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
