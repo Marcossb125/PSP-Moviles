@@ -23,5 +23,61 @@
 .normal {
   background-color: lightblue;
   color: black;
+}
 
+/* RESPONSIVE - Tablet */
+@media (max-width: 1024px) {
+  .opcion {
+    font-size: 14px;
+  }
+  
+  mat-toolbar {
+    padding: 0 12px;
+  }
+}
+
+/* RESPONSIVE - Tablet pequeña / Móvil grande */
+@media (max-width: 768px) {
+  .opcion:not(.opcion1) {
+    display: none;
+  }
+  
+  .opcion {
+    font-size: 13px;
+  }
+  
+  mat-toolbar {
+    padding: 0 8px;
+    min-height: 56px;
+  }
+  
+  .example-spacer {
+    flex: 0.5 1 auto;
+  }
+}
+
+/* RESPONSIVE - Móvil */
+@media (max-width: 480px) {
+  .opcion:not(.opcion1) {
+    display: none;
+  }
+  
+  .opcion {
+    font-size: 12px;
+  }
+  
+  mat-toolbar {
+    padding: 0 4px;
+    min-height: 48px;
+  }
+  
+  .example-spacer {
+    flex: 0.2 1 auto;
+  }
+  
+  mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
 }

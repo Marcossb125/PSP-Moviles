@@ -14,6 +14,8 @@ export class Clicker {
   monedasPorClick = 1;
   monedasPorSegundo = 0;
 
+  mostrarMenuMovil = false;
+
   botonPulsado = false;
 
   mejorasProduccion = [
@@ -110,5 +112,13 @@ export class Clicker {
     this.storage.clear();
     window.location.reload();
   }
+  toggleMenu() {
+    this.mostrarMenuMovil = !this.mostrarMenuMovil;
+  }
 }
+
+
+
+  
+
 
